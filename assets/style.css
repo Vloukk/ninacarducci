@@ -74,16 +74,15 @@ body {
 	margin-top: 1em;
 	margin-bottom: 60px;
 	font-size: 30px;
-	height: 40px; /* Spécifiez une hauteur fixe */
-    line-height: 40px;
 }
 .about-me__introduction {
 	font-family: 'Spectral';
 	font-weight: 800;
 	font-style: italic;
 	width: 60%;
+	font-size: 22px;
 }
-#about-me p {
+.about-me__message {
 	width: 80%;
 	font-size: 14px;
 }
