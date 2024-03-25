@@ -62,15 +62,10 @@ body {
 	left: 0;
 	z-index: -1;
 }
-
 .picture {
 	flex: 1;
 	margin: 0 20px;
 	z-index: 0;
-}
-
-.picture img {
-	width: 100%;
 }
 #about-me {
 	flex: 2
@@ -79,6 +74,8 @@ body {
 	margin-top: 1em;
 	margin-bottom: 60px;
 	font-size: 30px;
+	height: 40px; /* Spécifiez une hauteur fixe */
+    line-height: 40px;
 }
 .about-me__introduction {
 	font-family: 'Spectral';
