@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFullscreen = null;
 
     // Fonction pour afficher une image en plein écran
-    function showFullscreenImage(image) {
+    async function showFullscreenImage(image) {
         currentFullscreen = document.createElement('div');
         currentFullscreen.classList.add('fullscreen');
         const imageContainer = document.createElement('div');
