@@ -42,6 +42,7 @@ body {
 
 .social-link img {
 	width: 20px;
+	height: 20px;
 }
 
 #about {
@@ -315,6 +316,11 @@ input[type="submit"] {
 		bottom: 0;
 		right: 0;
 		z-index: -1;
+	}
+
+	.picture.right img {
+		width: 400px;
+		height: auto;
 	}
 }
 
