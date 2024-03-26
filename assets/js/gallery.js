@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction pour créer les boutons de navigation pour l'image en plein écran
     function createNavigationButton(direction) {
         const button = document.createElement('button');
-        button.innerHTML = direction === 'prev' ? '<i class="fas fa-chevron-left"></i>' : '<i class="fas fa-chevron-right"></i>';
+        button.innerHTML = direction === 'prev' ? '<div class="chevron-right"></div>' : '<div class="chevron-left"></div>';
         button.classList.add('navigation-button', direction);
         button.addEventListener('click', () => navigate(direction));
         return button;

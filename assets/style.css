@@ -42,7 +42,6 @@ body {
 
 .social-link img {
 	width: 20px;
-	height: 20px;
 }
 
 #about {
@@ -317,11 +316,6 @@ input[type="submit"] {
 		right: 0;
 		z-index: -1;
 	}
-
-	.picture.right img {
-		width: 400px;
-		height: auto;
-	}
 }
 
 @media all and (max-width: 650px) {
@@ -474,20 +468,54 @@ input[type="submit"] {
     z-index: 1;
 }
 
-.navigation-button i {
+.navigation-button {
 	font-size: 1.5em;
 	padding: 10px 0;
 }
 
+.chevron-left {
+	position: relative;
+	width: 20px;
+	height: 20px;
+  }
+  
+  .chevron-left::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-90%, -50%) rotate(45deg);
+	width: 10px;
+	height: 10px;
+	border: 1px solid rgb(0, 0, 0);
+	border-bottom: none;
+	border-left: none;
+  }
+  
+  .chevron-right {
+	position: relative;
+	width: 20px;
+	height: 20px;
+  }
+  
+  .chevron-right::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-10%, -50%) rotate(-135deg);
+	width: 10px;
+	height: 10px;
+	border: 1px solid rgb(0, 0, 0);
+	border-bottom: none;
+	border-left: none;
+  }
+  
+
 .navigation-button.prev {
-    left: -20px;
+    left: -18px;
 }
 
 .navigation-button.next {
-    right: -20px;
-}
-
-
-@media all and (max-width: 1000px) {
-
+    right: -18px;
 }
