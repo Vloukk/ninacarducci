@@ -1,8 +1,7 @@
 // Attend que le DOM soit entièrement chargé
 document.addEventListener('DOMContentLoaded', () => {
-    // Sélectionne toutes les images de la galerie
-    const images = document.querySelectorAll('.gallery-item');
-    console.log('Nombre total d\'images dans la galerie :', images.length);
+    // Définir images ici si nécessaire, en sélectionnant les éléments img
+    const images = document.querySelectorAll('.gallery picture img');
 
     // Crée un ensemble pour stocker les tags uniques
     const uniqueTags = new Set();
@@ -11,10 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const tag = image.getAttribute('data-gallery-tag');
         uniqueTags.add(tag);
     });
-    console.log('Tags uniques trouvés dans la galerie :', Array.from(uniqueTags));
-
-    // Initialise une variable pour suivre l'index de l'image en plein écran
-    let currentImageIndex = null;
 
     // Fonction pour créer les boutons de tag
     function createTagButtons() {
@@ -52,10 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction pour filtrer les images par tag
     function filtrerParTag(tag) {
         images.forEach(image => {
+            const picture = image.closest('picture');
             if (tag === 'Tous' || image.getAttribute('data-gallery-tag') === tag) {
                 image.style.display = 'block';
+                picture.style.display = 'block';
             } else {
                 image.style.display = 'none';
+                picture.style.display = 'none';
             }
         });
         // Met à jour les classes des boutons de tag pour refléter l'état actif
@@ -74,6 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour afficher une image en plein écran
     async function showFullscreenImage(image) {
+        // Ajoute une classe au body pour désactiver le défilement
+        document.body.classList.add('no-scroll');
         currentFullscreen = document.createElement('div');
         currentFullscreen.classList.add('fullscreen');
         const imageContainer = document.createElement('div');
@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(currentFullscreen);
         // Ajoute un événement de clic pour fermer l'image en plein écran en cliquant en dehors de celle-ci
         currentFullscreen.addEventListener('click', (e) => {
+            // Retire la classe du body pour réactiver le défilement
+            document.body.classList.remove('no-scroll');
             if (e.target === currentFullscreen) {
                 document.body.removeChild(currentFullscreen);
                 currentImageIndex = null; // Réinitialise l'index de l'image en plein écran
